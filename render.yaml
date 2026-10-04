@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: product-similarity-guard
+    runtime: docker
+    plan: starter
+    region: oregon
+    envVars:
+      - key: DATA_DIR
+        value: /data
+      - key: PORT
+        value: 8000
+    disk:
+      name: similarity-data
+      mountPath: /data
+      sizeGB: 1
